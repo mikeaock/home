@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>学生表单</title>
+</head>
+<body>
+<h1>学生表单</h1>
+<form th:action="@{${student.id == null} ? '/students' : '/students/' + ${student.id}}" th:object="${student}" method="post">
+    <div>
+        <label>姓名</label>
+        <input type="text" th:field="*{name}">
+    </div>
+    <div>
+        <label>年龄</label>
+        <input type="number" th:field="*{age}">
+    </div>
+    <div>
+        <label>班级</label>
+        <input type="text" th:field="*{class}">
+    </div>
+    <div>
+        <button type="submit">保存</button>
+    </div>
+</form>
+</body>
+</html>
